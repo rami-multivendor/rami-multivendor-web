@@ -1,13 +1,3 @@
-export const sendFormSubmission = `mutation SendFormSubmission($name:String!,$email:String!,$message:String!) {
-  sendFormSubmission(formSubmissionInput:{
-    name:$name,
-    email:$email,
-    message:$message
-  }){
-    status
-    message
-  }
-}`;
 export const sendChatMessage = `mutation SendChatMessage($orderId: ID!, $messageInput: ChatMessageInput!) {
   sendChatMessage(message: $messageInput, orderId: $orderId) {
     success
