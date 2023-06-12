@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Box, Grid, Typography } from "@mui/material";
 import React, { useContext, useEffect } from "react";
-import { Link as RouterLink } from "react-router-dom";
+
 import Footer from "../../components/Footer/Footer";
 import { Header, LoginHeader } from "../../components/Header";
 import UserContext from "../../context/User";

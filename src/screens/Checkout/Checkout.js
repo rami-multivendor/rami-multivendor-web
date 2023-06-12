@@ -313,8 +313,8 @@ function Checkout() {
     } else if (paymentMethod.payment === "PAYPAL") {
       navigate(`/paypal?id=${data.placeOrder._id}`, { replace: true });
     } else if (paymentMethod.payment === "STRIPE") {
-      navigate(`/stripe?id=${data.placeOrder._id}`, { replace: true });
-      //window.location = `${SERVER_URL}stripe/create-checkout-session?id=${data.placeOrder.orderId}&platform=web`;
+      //navigate(`/stripe?id=${data.placeOrder._id}`, { replace: true });
+      window.location = `${SERVER_URL}stripe/create-checkout-session?id=${data.placeOrder.orderId}&platform=web`;
     }
   }
 
@@ -612,7 +612,11 @@ function Checkout() {
                   open={addressModal}
                   maxWidth="md"
                   PaperProps={{
-                    style: { borderRadius: 30, overflowY: "scroll", height: extraSmall ? 500 : null},
+                    style: {
+                      borderRadius: 30,
+                      overflowY: "scroll",
+                      height: extraSmall ? 500 : null,
+                    },
                   }}
                 >
                   <>
@@ -662,7 +666,7 @@ function Checkout() {
                       style={{
                         background: theme.palette.common.white,
                         padding: theme.spacing(2, 0),
-                        marginLeft: "20px"
+                        marginLeft: "20px",
                       }}
                     >
                       <Paper
@@ -685,7 +689,7 @@ function Checkout() {
                             onClick={(e) => {
                               e.preventDefault();
                               getCurrentLocation(locationCallback);
-                              toggleAdressModal()
+                              toggleAdressModal();
                             }}
                           >
                             <NearMeIcon
@@ -715,7 +719,7 @@ function Checkout() {
                       setSelectedAddress={setDeliveryAddress}
                       isProfile={true}
                       isCheckout={true}
-                      close = {toggleAdressModal}
+                      close={toggleAdressModal}
                     />
                   </>
                 </Dialog>
