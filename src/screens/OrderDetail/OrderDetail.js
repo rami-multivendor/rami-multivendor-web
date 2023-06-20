@@ -36,6 +36,18 @@ import TrackingRider from "../../components/Orders/OrderDetail/TrackingRider";
 import { useSubscription } from "@apollo/client";
 import { subscriptionOrder } from "../../apollo/server";
 import gql from "graphql-tag";
+import Modal from 'react-modal'
+import { reviewOrder } from '../../apollo/server'
+import { useMutation } from '@apollo/client'
+import FlashMessage from '../../components/FlashMessage'
+import ThreeDots from '../../components/ThreeDots/ThreeDots'
+import StarRatings from 'react-star-ratings';
+
+
+// constants
+const REVIEWORDER = gql`
+  ${reviewOrder}
+`
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -52,6 +64,60 @@ function OrderDetail() {
   const queryParams = useQuery();
   const [toggleChat, setToggleChat] = useState(false);
   const { location } = useLocationContext();
+  const [isOpen, setIsOpen] = useState(false);
+  const [rating, setRating] = useState(0)
+  const [description, setDescription] = useState('')
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
+  const [mutate, { loading: loadingMutation }] = useMutation(REVIEWORDER, {
+    onError,
+    onCompleted,
+  })
+
+  useEffect(() => {
+    async function Track() {
+      await Analytics.track(Analytics.events.NAVIGATE_TO_RATEANDREVIEW)
+    }
+    Track()
+  }, [])
+
+  function onFinishRating(rating) {
+    setRating(rating)
+  }
+
+  function onChangeText(description) {
+    setDescription(description)
+  }
+
+  function onSubmit() {
+    console.log('submitted')
+    mutate({
+      variables: {
+        order: id,
+        rating: rating,
+        description: description,
+      },
+    })
+  }
+
+  function onCompleted(data) {
+    closeModal()
+
+  }
+
+  function onError(error) {
+    console.log(JSON.stringify(error))
+    FlashMessage({
+      message: error.networkError.result.errors[0].message,
+    })
+  }
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  }
 
   useSubscription(
     gql`
@@ -191,7 +257,7 @@ function OrderDetail() {
               <Box
                 className={classes.chat}
                 onClick={() => {
-                  //Navigate to Rate and Review
+                  openModal()
                 }}
               >
                 <Typography
@@ -227,6 +293,73 @@ function OrderDetail() {
       </Background>
       <Promotion />
       <Footer />
+      <Modal
+      isOpen={isOpen} // pass the isOpen prop to control the modal visibility
+      onRequestClose={closeModal} // pass the onClose prop to handle closing the modal
+      style={{
+        content: {
+          top: '50%',
+          left: '50%',
+          right: 'auto',
+          bottom: 'auto',
+          transform: 'translate(-50%, -50%)',
+          width: mobile ? "80%" : "50%", // Add the desired width here
+          height: mobile ? "40%" : "35%", // Add the desired height here
+        },
+        overlay: {
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        },
+      }}
+    >
+      <div style={{ flex: 1, textAlign: '-webkit-center', padding: mobile ? 0 :'30px' }}>
+        <div style={{ width: '100%', height: '100%' }}>
+          <h2>Write a Review</h2>
+        </div>
+        <div style={{ width: '100%', justifyContent: 'center', alignItems: 'center' }}>
+          <div style={{ width: '70%', height: '60%' }}>
+          <StarRatings
+            emptyStarColor="#90EA93" // Set the empty star color to #90EA93
+            fullStarColor="#90EA93" // Set the full star color to #90EA93
+            disabled={false}
+            maxStars={5}
+            rating={rating}
+            changeRating={onFinishRating}
+            starDimension= {mobile ? "20px" : "50px"}
+          />
+          </div>
+        </div>
+        <div style={{ width: '100%', justifyContent: 'center', alignItems: 'center' }}>
+          <input
+            style={{
+              marginTop: '30px',
+              height: '100%',
+              color: '#212121',
+              width: mobile ?  '100%' : '40%',
+              border: 'none',
+              borderBottom: '1px solid #7F7F7F',
+              outline: 'none',
+            }}
+            placeholderTextColor='#7F7F7F'
+            onChange={(e) => onChangeText(e.target.value)}
+            placeholder='More detailed reviews get more visibility...'
+          />
+        </div>
+        <div style={{ width: '100%', justifyContent: 'center', alignItems: 'center' }}>
+          <div style={{ width: '80%', height: '10%' }}>
+            {loadingMutation && <ThreeDots />}
+            {!loadingMutation && (
+              <button
+                onClick={onSubmit}
+                style={{ width: '40%', color: 'white', backgroundColor: '#90EA93', marginTop: '20px',  border: 'none', padding: '10px' }}
+              >
+                Submit
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+      <div style={{ backgroundColor: '#000' }} />
+    </Modal>
     </>
   );
 }
