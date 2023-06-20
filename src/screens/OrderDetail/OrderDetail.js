@@ -188,6 +188,21 @@ function OrderDetail() {
                 </Box>
               )}
 
+              <Box
+                className={classes.chat}
+                onClick={() => {
+                  //Navigate to Rate and Review
+                }}
+              >
+                <Typography
+                  variant="body2"
+                  color="common"
+                  className={(classes.textBold, classes.smallText)}
+                >
+                  Review
+                </Typography>
+              </Box>
+
               {toggleChat && (
                 <Chat setToggleChat={setToggleChat} id={order?._id} />
               )}
