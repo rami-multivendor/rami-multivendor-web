@@ -255,62 +255,68 @@ function RestaurantInfo({ isVisible, toggleModal, restaurantInfo }) {
           </Box>
           {restaurantInfo.reviewData.reviews.map((review, index) => (
             <Box key={`REVIEW_${review._id}`}>
-              {/* // <Box
-          //   style={{
-          //     backgroundColor: "black",
-          //     padding: "12px",
-          //     borderRadius: "10px",
-          //     marginLeft: "10px",
-          //     marginRight: "10px",
-          //   }}
-          // > */}
-              <Box display="flex" justifyContent="space-between">
-                <Typography
-                  variant="h6"
-                  color="textSecondary"
-                  className={classes.lightText}
-                  style={{ color: "white", fontWeight: 800 }}
-                >
-                  {review.order.user.name}
-                </Typography>
-                <Box display="flex" justifyContent="center" alignItems="center">
-                  <StarSharpIcon
-                    style={{ fontSize: "14px", color: "#E2C077" }}
-                  />
+              <Box
+                style={{
+                  backgroundColor: "black",
+                  padding: "12px",
+                  borderRadius: "10px",
+                  marginLeft: "10px",
+                  marginRight: "10px",
+                  marginBottom: "10px",
+                }}
+              >
+                <Box display="flex" justifyContent="space-between">
                   <Typography
-                    className={classes.xSmallText}
-                    style={{
-                      fontWeight: 700,
-                      color: "white",
-                    }}
+                    variant="h6"
+                    color="textSecondary"
+                    className={classes.lightText}
+                    style={{ color: "white", fontWeight: 800 }}
                   >
-                    {review.rating}
+                    {review.order.user.name}
                   </Typography>
-                  <Typography
-                    className={classes.xSmallText}
-                    style={{ color: "white" }}
+                  <Box
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
                   >
-                    /5
-                  </Typography>
+                    <StarSharpIcon
+                      style={{ fontSize: "14px", color: "#E2C077" }}
+                    />
+                    <Typography
+                      className={classes.xSmallText}
+                      style={{
+                        fontWeight: 700,
+                        color: "white",
+                      }}
+                    >
+                      {review.rating}
+                    </Typography>
+                    <Typography
+                      className={classes.xSmallText}
+                      style={{ color: "white" }}
+                    >
+                      /5
+                    </Typography>
+                  </Box>
                 </Box>
+                {/* <Typography
+                  variant="subtitle1"
+                  className={classes.lightText}
+                  //style={{ color: theme.palette.text.disabled }}
+                  style={{ color: "GrayText", fontSize: 12 }}
+                >
+                  {new Date(review.createdAt).toDateString()}
+                </Typography> */}
+                <Typography
+                  variant="subtitle1"
+                  className={`${classes.line} ${classes.lightText}`}
+                  //style={{ color: theme.palette.text.disabled }}
+                  style={{ color: "white" }}
+                >
+                  {review.description}
+                </Typography>
+                <Divider />
               </Box>
-              <Typography
-                variant="subtitle1"
-                className={classes.lightText}
-                //style={{ color: theme.palette.text.disabled }}
-                style={{ color: "GrayText", fontSize: 12 }}
-              >
-                {new Date(review.createdAt).toDateString()}
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                className={`${classes.line} ${classes.lightText}`}
-                //style={{ color: theme.palette.text.disabled }}
-                style={{ color: "white" }}
-              >
-                {review.description}
-              </Typography>
-              <Divider />
             </Box>
           ))}
         </TabContainer>
