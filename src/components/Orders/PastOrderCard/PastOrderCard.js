@@ -14,6 +14,7 @@ import ConfigurationContext from "../../../context/Configuration";
 import UserContext from "../../../context/User";
 import useStyles from "./styles";
 import { Status } from "../Status/Status";
+import { Link as RouterLink } from "react-router-dom";
 
 function PastOrderCard({ item }) {
   const theme = useTheme();
@@ -67,6 +68,10 @@ function PastOrderCard({ item }) {
     }
   };
   return (
+    <RouterLink
+    to={{ pathname: `/order-detail/${item._id}` }}
+    className={classes.link}
+    >
     <Grid item xs={12} className={classes.card}>
       <Box display="flex" justifyContent="space-between">
         <Box>
@@ -180,6 +185,34 @@ function PastOrderCard({ item }) {
               </Typography>
             )}
           </Button>
+          {!item.review && (
+          <Button
+            disabled={loading}
+            style={{
+              maxWidth: "auto",
+              border: `1px solid ${theme.palette.primary.main}`,
+              borderRadius: 0,
+              padding: `0px ${theme.spacing(1)}`,
+              marginLeft:' 10px'
+            }}
+            onClick={(e) => {
+              e.preventDefault();
+              navigate(`/order-detail/${item._id}`)
+            }}
+          >
+            {loading ? (
+              <CircularProgress color="primary" size={15} />
+            ) : (
+              <Typography
+                variant="caption"
+                color="#3C8F7C"
+                className={classes.textBold}
+              >
+                Review
+              </Typography>
+            )}
+          </Button>
+          )}
         </Box>
         <Box>
           <img
@@ -229,6 +262,7 @@ function PastOrderCard({ item }) {
         </Box>
       </Box>
     </Grid>
+  </RouterLink>
   );
 }
 

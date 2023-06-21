@@ -196,7 +196,7 @@ function OrderDetail() {
             <Typography>Unable to load data </Typography>
           ) : order?.orderStatus !== "CANCELLED" ? (
             <Grid container item>
-              {!["CANCELLED", "DELIVERED"].includes(order.orderStatus) && (
+              {!["CANCELLED",].includes(order.orderStatus) && (
                 <Grid item xs={12} className={classes.topContainer}>
                   <GoogleMap
                     mapContainerStyle={{
@@ -253,9 +253,9 @@ function OrderDetail() {
                   </Typography>
                 </Box>
               )}
-
+              {order.orderStatus === 'DELIVERED' && !order.review && (
               <Box
-                className={classes.chat}
+                className={classes.review}
                 onClick={() => {
                   openModal()
                 }}
@@ -265,10 +265,11 @@ function OrderDetail() {
                   color="common"
                   className={(classes.textBold, classes.smallText)}
                 >
-                  Review
+                  Review your order 
                 </Typography>
               </Box>
-
+              )
+              }
               {toggleChat && (
                 <Chat setToggleChat={setToggleChat} id={order?._id} />
               )}

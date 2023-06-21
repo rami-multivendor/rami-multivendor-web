@@ -66,6 +66,20 @@ const useStyles = makeStyles((theme) => ({
       bottom: "10px",
     },
   },
+  review: {
+    position: "fixed",
+    right: "20px",
+    bottom: "200px",
+    background: theme.palette.common.black,
+    padding: theme.spacing(2, 3),
+    borderRadius: 10,
+    borderBottomRightRadius: 0,
+    cursor: "pointer",
+    [theme.breakpoints.down("sm")]: {
+      right: "10px",
+      bottom: "10px",
+    },
+  },
   w70: {
     width: "70%",
   },
