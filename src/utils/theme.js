@@ -4,7 +4,7 @@ import { createTheme } from "@mui/material/styles";
 const theme = createTheme({
   breakpoints: {
     keys: ["xs", "sm", "md", "lg", "xl"],
-    values: { xs: 0, sm: 600, md: 900, lg: 1200, xl: 1400}
+    values: { xs: 0, sm: 600, md: 900, lg: 1200, xl: 1400 },
   },
   overrides: {
     MuiPickersToolbar: {
@@ -46,6 +46,7 @@ const theme = createTheme({
     fontWeightRegular: 400,
     fontWeightMedium: 500,
     fontWeightBold: 700,
+    fontWeightBolder: 800,
     h1: {
       fontWeight: 300,
       fontSize: "6rem",
@@ -149,6 +150,7 @@ const theme = createTheme({
       main: "#90EA93",
       light: "#fff",
       dark: "#F4F4F4",
+      darkest: "#C4C4C4",
       contrastText: "#fff",
     },
     secondary: {
@@ -174,6 +176,11 @@ const theme = createTheme({
       light: "#FCC54C",
       contrastText: "#fff",
     },
+    button: {
+      main: "#3C8F7C",
+      contrastText: "#fff",
+    },
+
     grey: {
       50: "#fafafa",
       100: "#f5f5f5",

@@ -171,7 +171,6 @@ function Checkout() {
 
     return times.length > 0;
   };
-
   const toggleAdressModal = useCallback(() => {
     setAddressModal((prev) => !prev);
   }, []);
@@ -313,8 +312,8 @@ function Checkout() {
     } else if (paymentMethod.payment === "PAYPAL") {
       navigate(`/paypal?id=${data.placeOrder._id}`, { replace: true });
     } else if (paymentMethod.payment === "STRIPE") {
-      //navigate(`/stripe?id=${data.placeOrder._id}`, { replace: true });
-      window.location = `${SERVER_URL}stripe/create-checkout-session?id=${data.placeOrder.orderId}&platform=web`;
+      navigate(`/stripe?id=${data.placeOrder._id}`, { replace: true });
+      //window.location = `${SERVER_URL}stripe/create-checkout-session?id=${data.placeOrder.orderId}&platform=web`;
     }
   }
 
