@@ -69,200 +69,160 @@ function PastOrderCard({ item }) {
   };
   return (
     <RouterLink
-    to={{ pathname: `/order-detail/${item._id}` }}
-    className={classes.link}
+      to={{ pathname: `/order-detail/${item._id}` }}
+      className={classes.link}
     >
-    <Grid item xs={12} className={classes.card}>
-      <Box display="flex" justifyContent="space-between">
-        <Box>
+      <Grid item xs={12} className={classes.card}>
+        <Box display="flex" justifyContent="space-between">
+          <Box>
+            <Box display={small ? "block" : "flex"} alignItems="center">
+              <Typography
+                variant="body2"
+                color="textSecondary"
+                className={classes.textBold}
+              >
+                {item.restaurant?.name ?? "..."}
+              </Typography>
+              <Box display="flex">
+                <Status
+                  isEta={false}
+                  first={true}
+                  last={false}
+                  isActive={true}
+                />
+                <Status
+                  firstCol={theme.palette.primary.main}
+                  secondCol={theme.palette.primary.darkest}
+                  isEta={STATUS_ORDER.indexOf(item.orderStatus) < 1}
+                  first={false}
+                  last={false}
+                  isActive={true}
+                />
+                <Status
+                  firstCol={theme.palette.primary.main}
+                  secondCol={theme.palette.primary.darkest}
+                  isEta={STATUS_ORDER.indexOf(item.orderStatus) < 2}
+                  first={false}
+                  last={false}
+                  isActive={true}
+                />
+                <Status
+                  firstCol={theme.palette.primary.main}
+                  secondCol={theme.palette.primary.darkest}
+                  isEta={STATUS_ORDER.indexOf(item.orderStatus) < 4}
+                  first={false}
+                  last={true}
+                  isActive={true}
+                />
+              </Box>
+            </Box>
+            <Typography
+              variant="body2"
+              className={`${classes.textBold} ${classes.disabledText}`}
+              pt={theme.spacing(1)}
+            >
+              {item?.items.length} item(s) |{" "}
+              {`${configuration.currencySymbol} ${parseFloat(
+                item.orderAmount
+              ).toFixed(2)}`}
+            </Typography>
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              pt={theme.spacing(1)}
+            >
+              <Box display="flex">
+                <Typography
+                  gutterBottom
+                  className={classes.smallText}
+                  color={theme.palette.common.black}
+                >
+                  {item?.orderStatus === "CANCELLED"
+                    ? "Your order has been cancelled"
+                    : item?.orderStatus === "DELIVERED"
+                    ? "Order completed successfully. Thankyou for placing order"
+                    : null}
+                </Typography>
+                <Box ml={theme.spacing(1)} />
+              </Box>
+            </Box>
+            <Typography
+              gutterBottom
+              className={`${classes.disabledText} ${classes.smallText}`}
+            >
+              {new Date(item.createdAt).toDateString()}
+            </Typography>
+            <Button
+              disabled={loading}
+              className={classes.reOrder}
+              onClick={(e) => {
+                e.preventDefault();
+                onAddToCart();
+              }}
+            >
+              {loading ? (
+                <CircularProgress color="primary" size={15} />
+              ) : (
+                <Typography
+                  variant="caption"
+                  color={theme.palette.button.main}
+                  className={classes.textBold}
+                >
+                  REORDER
+                </Typography>
+              )}
+            </Button>
+            {!item.review && (
+              <Button
+                disabled={loading}
+                className={classes.review}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(`/order-detail/${item._id}`);
+                }}
+              >
+                {loading ? (
+                  <CircularProgress color="primary" size={15} />
+                ) : (
+                  <Typography
+                    variant="caption"
+                    color={theme.palette.button.main}
+                    className={classes.textBold}
+                  >
+                    Review
+                  </Typography>
+                )}
+              </Button>
+            )}
+          </Box>
+          <Box>
+            <img
+              src={item.restaurant.image}
+              alt="Restaurant"
+              className={classes.img}
+            />
+          </Box>
+        </Box>
+
+        <Divider orientation="horizontal" className={classes.divider} />
+        <Box display="flex" justifyContent="center">
           <Box
-            style={{ display: small ? "block" : "flex" }}
+            display="flex"
+            justifyContent="center"
             alignItems="center"
+            className={classes.status}
           >
             <Typography
               variant="body2"
-              color="textSecondary"
-              className={classes.textBold}
+              color={theme.palette.button.main}
+              fontWeight={600}
             >
-              {item.restaurant?.name ?? "..."}
+              {item?.orderStatus}
             </Typography>
-            <Box display="flex">
-              <Status isEta={false} first={true} last={false} isActive={true} />
-              <Status
-                firstCol="#90EA93"
-                secondCol="#C4C4C4"
-                isEta={STATUS_ORDER.indexOf(item.orderStatus) < 1}
-                first={false}
-                last={false}
-                isActive={true}
-              />
-              <Status
-              firstCol="#90EA93"
-              secondCol="#C4C4C4"
-                isEta={STATUS_ORDER.indexOf(item.orderStatus) < 2}
-                first={false}
-                last={false}
-                isActive={true}
-              />
-              <Status
-              firstCol="#90EA93"
-              secondCol="#C4C4C4"
-                isEta={STATUS_ORDER.indexOf(item.orderStatus) < 4}
-                first={false}
-                last={true}
-                isActive={true}
-              />
-            </Box>
           </Box>
-          <Typography
-            variant="body2"
-            className={`${classes.textBold} ${classes.disabledText}`}
-            pt={theme.spacing(1)}
-          >
-            {item?.items.length} item(s) |{" "}
-            {`${configuration.currencySymbol} ${parseFloat(
-              item.orderAmount
-            ).toFixed(2)}`}
-          </Typography>
-          <Box
-            display="flex"
-            justifyContent="space-between"
-            pt={theme.spacing(1)}
-          >
-            <Box display="flex">
-            <Typography
-              gutterBottom
-              className={classes.smallText}
-              style={{ color: "black", }}
-            >
-              {/* {props?.items?.length} item(s) |
-              {`${configuration.currencySymbol} ${parseFloat(
-                props.orderAmount
-              ).toFixed(2)}`} */}
-              {item?.orderStatus === "CANCELLED"
-                ? "Your order has been cancelled"
-                : item?.orderStatus === "DELIVERED"
-                ? "Order completed successfully. Thankyou for placing order"
-                : null}
-            </Typography>
-              <Box ml={theme.spacing(1)} />
-              {/* <Typography
-                className={`${classes.textBold} ${classes.smallText}`}
-                color="textSecondary"
-              >
-                {item.rider?.name ?? "..."}
-              </Typography> */}
-            </Box>
-          </Box>
-          <Typography
-            gutterBottom
-            className={`${classes.disabledText} ${classes.smallText}`}
-          >
-            {new Date(item.createdAt).toDateString()}
-          </Typography>
-          <Button
-            disabled={loading}
-            style={{
-              maxWidth: "auto",
-              border: `1px solid ${theme.palette.primary.main}`,
-              borderRadius: 0,
-              padding: `0px ${theme.spacing(1)}`,
-            }}
-            onClick={(e) => {
-              e.preventDefault();
-              onAddToCart();
-            }}
-          >
-            {loading ? (
-              <CircularProgress color="primary" size={15} />
-            ) : (
-              <Typography
-                variant="caption"
-                color="#3C8F7C"
-                className={classes.textBold}
-              >
-                REORDER
-              </Typography>
-            )}
-          </Button>
-          {!item.review && (
-          <Button
-            disabled={loading}
-            style={{
-              maxWidth: "auto",
-              border: `1px solid ${theme.palette.primary.main}`,
-              borderRadius: 0,
-              padding: `0px ${theme.spacing(1)}`,
-              marginLeft:' 10px'
-            }}
-            onClick={(e) => {
-              e.preventDefault();
-              navigate(`/order-detail/${item._id}`)
-            }}
-          >
-            {loading ? (
-              <CircularProgress color="primary" size={15} />
-            ) : (
-              <Typography
-                variant="caption"
-                color="#3C8F7C"
-                className={classes.textBold}
-              >
-                Review
-              </Typography>
-            )}
-          </Button>
-          )}
         </Box>
-        <Box>
-          <img
-            src={item.restaurant.image}
-            alt="Restaurant"
-            className={classes.img}
-          />
-        </Box>
-      </Box>
-
-      {/* {item.items.map((item) => (
-        <Grid item key={item._id}>
-          <Typography
-            variant="caption"
-            className={`${classes.disabledText} ${classes.smallText}`}
-          >
-            {`${item.quantity}x ${item.title}${
-              item.variation.title ? `(${item.variation.title})` : ""
-            }`}
-          </Typography>
-          {item.addons.map((addon) =>
-            addon.options.map((option) => (
-              <Typography
-                className={`${classes.disabledText} ${classes.smallText}`}
-              >
-                +{option.title}
-              </Typography>
-            ))
-          )}
-        </Grid>
-      ))} */}
-      <Divider orientation="horizontal" className={classes.divider} />
-      <Box display="flex" justifyContent="center">
-        <Box
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          className={classes.status}
-        >
-          <Typography
-            variant="body2"
-            color="#3C8F7C"
-            style={{ fontWeight: 600 }}
-          >
-            {item?.orderStatus}
-          </Typography>
-        </Box>
-      </Box>
-    </Grid>
-  </RouterLink>
+      </Grid>
+    </RouterLink>
   );
 }
 

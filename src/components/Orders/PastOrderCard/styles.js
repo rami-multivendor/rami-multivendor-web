@@ -41,6 +41,19 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(2),
     border: "1px solid",
   },
+  reOrder: {
+    maxWidth: "auto",
+    border: `1px solid ${theme.palette.primary.main}`,
+    borderRadius: 0,
+    padding: `0px ${theme.spacing(1)}`,
+  },
+  review: {
+    maxWidth: "auto",
+    border: `1px solid ${theme.palette.primary.main}`,
+    borderRadius: 0,
+    padding: `0px ${theme.spacing(1)}`,
+    marginLeft: " 10px",
+  },
 }));
 
 export default useStyles;

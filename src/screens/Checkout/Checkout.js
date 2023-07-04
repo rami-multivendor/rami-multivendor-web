@@ -171,7 +171,6 @@ function Checkout() {
 
     return times.length > 0;
   };
-  console.log("Checkout Page")
   const toggleAdressModal = useCallback(() => {
     setAddressModal((prev) => !prev);
   }, []);

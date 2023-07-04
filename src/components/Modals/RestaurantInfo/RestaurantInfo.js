@@ -57,36 +57,29 @@ function RestaurantInfo({ isVisible, toggleModal, restaurantInfo }) {
         style={{ backgroundImage: `url('${restaurantInfo?.image ?? ""}')` }}
       />
       <Container
-        style={{
-          background: theme.palette.common.white,
-          maxWidth: extraSmall ? "400px" : "700px",
-          marginTop: "-50px",
-          paddingLeft: "0px",
-          paddingRight: "0px",
-          boxShadow: theme.shadows[1],
-        }}
+        maxWidth={extraSmall ? "400px" : "700px"}
+        className={classes.restaurantContainer}
       >
         <Box pt={theme.spacing(2)}>
           <Box display="flex" alignItems="center" justifyContent="center">
             <Typography
               className={classes.titleText}
-              style={{ color: theme.palette.text.secondary, fontWeight: 700 }}
+              color={theme.palette.text.secondary}
+              fontWeight={theme.typography.fontWeightBold}
             >
               {restaurantInfo.name}
             </Typography>
             <Box pl={theme.spacing(1)} pr={theme.spacing(1)} />
-            <StarSharpIcon style={{ fontSize: "14px", color: "#276fa5" }} />
+            <StarSharpIcon className={classes.starIcon} />
             <Typography
               className={classes.xSmallText}
-              style={{ fontWeight: 700, color: theme.palette.text.secondary }}
+              color={theme.palette.text.secondary}
+              fontWeight={theme.typography.fontWeightBold}
             >
               {restaurantInfo.reviewData.ratings}
             </Typography>
             <Typography className={classes.xSmallText}>/5</Typography>
-            <Typography
-              style={{ fontSize: "0.875rem", marginLeft: "3px" }}
-              className={classes.xSmallText}
-            >
+            <Typography marginLeft={3} className={classes.SmallText}>
               {` (${restaurantInfo.reviewData.total})`}
             </Typography>
             <Box pb={theme.spacing(2)} />
@@ -105,16 +98,11 @@ function RestaurantInfo({ isVisible, toggleModal, restaurantInfo }) {
                 key={`MODAL_DELAS_${index}`}
               >
                 <FiberManualRecordIcon
-                  style={{
-                    fontSize: "5px",
-                    paddingRight: "5px",
-                    color: theme.palette.text.disabled,
-                  }}
+                  color={theme.palette.text.disabled}
+                  fontSize="5px"
+                  paddingRight="5px"
                 />
-                <Typography
-                  className={classes.xSmallText}
-                  style={{ paddingRight: "5px" }}
-                >
+                <Typography className={classes.xSmallText}>
                   {item.title}
                 </Typography>
               </Box>
@@ -133,9 +121,13 @@ function RestaurantInfo({ isVisible, toggleModal, restaurantInfo }) {
           <Divider light orientation="horizontal" />
           <Box display="flex" justifyContent="center">
             <Tabs value={tabValue} onChange={handleChange}>
-              <Tab style={{ color: "black" }} label="ABOUT" {...a11yProps(0)} />
               <Tab
-                style={{ color: "black" }}
+                color={theme.palette.common.black}
+                label="ABOUT"
+                {...a11yProps(0)}
+              />
+              <Tab
+                color={theme.palette.common.black}
                 label="REVIEWS"
                 {...a11yProps(1)}
               />
@@ -143,21 +135,11 @@ function RestaurantInfo({ isVisible, toggleModal, restaurantInfo }) {
           </Box>
         </Box>
       </Container>
-      <Container
-        style={{
-          maxWidth: extraSmall ? "400px" : "700px",
-          paddingLeft: "0px",
-          paddingRight: "0px",
-        }}
-      >
-        <TabContainer
-          style={{ paddingLeft: "0px", paddingRight: "0px" }}
-          value={tabValue}
-          index={0}
-        >
+      <Container maxWidth={extraSmall ? "400px" : "700px"}>
+        <TabContainer value={tabValue} index={0}>
           <Typography
             className={classes.titleText}
-            style={{ color: theme.palette.text.secondary }}
+            color={theme.palette.text.secondary}
           >
             Delivery hours
           </Typography>
@@ -172,20 +154,15 @@ function RestaurantInfo({ isVisible, toggleModal, restaurantInfo }) {
             >
               <Box
                 display="flex"
-                style={{
-                  backgroundColor: "#90EA93",
-                  marginBottom: "10px",
-                  padding: "10px",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  width: "80%",
-                  borderRadius: "24px",
-                }}
+                backgroundColor={theme.palette.primary.main}
+                borderRadius="24px"
+                padding="10px"
+                marginBottom="10px"
+                justifyContent="center"
+                alignItems="center"
+                width="80%"
               >
-                <Typography
-                  className={classes.smallText}
-                  style={{ width: "40px" }}
-                >
+                <Typography className={classes.smallText} width="40px">
                   {" "}
                   {`${dayOb.day}`}
                 </Typography>
@@ -214,7 +191,7 @@ function RestaurantInfo({ isVisible, toggleModal, restaurantInfo }) {
 
           <Typography
             className={classes.titleText}
-            style={{ color: theme.palette.text.secondary }}
+            color={theme.palette.text.secondary}
           >
             Address
           </Typography>
@@ -227,15 +204,13 @@ function RestaurantInfo({ isVisible, toggleModal, restaurantInfo }) {
           >
             <Box
               display="flex"
-              style={{
-                backgroundColor: "#90EA93",
-                marginBottom: "10px",
-                padding: "10px",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "80%",
-                borderRadius: "24px",
-              }}
+              backgroundColor={theme.palette.primary.main}
+              borderRadius="24px"
+              padding="10px"
+              marginBottom="10px"
+              justifyContent="center"
+              alignItems="center"
+              width="80%"
             >
               <Typography className={classes.smallText}>
                 {restaurantInfo.address || ""}
@@ -246,7 +221,7 @@ function RestaurantInfo({ isVisible, toggleModal, restaurantInfo }) {
         <TabContainer value={tabValue} index={1}>
           <Typography
             className={classes.titleText}
-            style={{ color: theme.palette.text.secondary }}
+            color={theme.palette.common.white}
           >
             {`${restaurantInfo.reviewData.total} Reviews`}
           </Typography>
@@ -255,22 +230,12 @@ function RestaurantInfo({ isVisible, toggleModal, restaurantInfo }) {
           </Box>
           {restaurantInfo.reviewData.reviews.map((review, index) => (
             <Box key={`REVIEW_${review._id}`}>
-              <Box
-                style={{
-                  backgroundColor: "black",
-                  padding: "12px",
-                  borderRadius: "10px",
-                  marginLeft: "10px",
-                  marginRight: "10px",
-                  marginBottom: "10px",
-                }}
-              >
+              <Box className={classes.reviewContainer}>
                 <Box display="flex" justifyContent="space-between">
                   <Typography
                     variant="h6"
-                    color="textSecondary"
+                    color={theme.palette.common.white}
                     className={classes.lightText}
-                    style={{ color: "white", fontWeight: 800 }}
                   >
                     {review.order.user.name}
                   </Typography>
@@ -279,39 +244,22 @@ function RestaurantInfo({ isVisible, toggleModal, restaurantInfo }) {
                     justifyContent="center"
                     alignItems="center"
                   >
-                    <StarSharpIcon
-                      style={{ fontSize: "14px", color: "#E2C077" }}
-                    />
+                    <StarSharpIcon className={classes.starSharp} />
                     <Typography
-                      className={classes.xSmallText}
-                      style={{
-                        fontWeight: 700,
-                        color: "white",
-                      }}
+                      color={theme.palette.common.white}
+                      fontWeight={theme.typography.fontWeightMedium}
                     >
                       {review.rating}
                     </Typography>
-                    <Typography
-                      className={classes.xSmallText}
-                      style={{ color: "white" }}
-                    >
+                    <Typography color={theme.palette.common.white}>
                       /5
                     </Typography>
                   </Box>
                 </Box>
-                {/* <Typography
-                  variant="subtitle1"
-                  className={classes.lightText}
-                  //style={{ color: theme.palette.text.disabled }}
-                  style={{ color: "GrayText", fontSize: 12 }}
-                >
-                  {new Date(review.createdAt).toDateString()}
-                </Typography> */}
                 <Typography
                   variant="subtitle1"
                   className={`${classes.line} ${classes.lightText}`}
-                  //style={{ color: theme.palette.text.disabled }}
-                  style={{ color: "white" }}
+                  color={theme.palette.common.white}
                 >
                   {review.description}
                 </Typography>
