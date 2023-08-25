@@ -1,5 +1,5 @@
 {
-  "name": "enatega",
+  "name": "modules",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -71,5 +71,9 @@
     ">0.2%",
     "not dead",
     "not op_mini all"
-  ]
+  ],
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

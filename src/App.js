@@ -1,6 +1,6 @@
 import { Box, CircularProgress } from "@mui/material";
 import { useJsApiLoader } from "@react-google-maps/api";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { getToken, onMessage } from "firebase/messaging";
 import { initialize, isFirebaseSupported } from "./firebase";
@@ -33,8 +33,10 @@ import * as Sentry from "@sentry/react";
 import AuthRoute from "./routes/AuthRoute";
 import PrivateRoute from "./routes/PrivateRoute";
 import VerifyPhone from "./screens/VerifyPhone/VerifyPhone";
+import UserContext from "./context/User"
 
 function App() {
+  const { isLoggedIn } = useContext(UserContext);
   const [message, setMessage] = useState(null);
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
@@ -209,9 +211,7 @@ function App() {
         <Route
           path={"/checkout"}
           element={
-            <PrivateRoute>
-              <Checkout />
-            </PrivateRoute>
+            isLoggedIn ? <Checkout /> : <Login />
           }
         />
         <Route
