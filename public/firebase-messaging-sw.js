@@ -6,7 +6,7 @@ importScripts(
    "https://www.gstatic.com/firebasejs/9.4.0/firebase-messaging-compat.js"
 );
 const app = firebase.initializeApp({
-   apiKey: "AIzaSyDQq64IJXqTsjTNB0gxkmM1HLMfK1WIW20",
+   apiKey: "AIzaSyDGDa0gKH1aKvpOYtVNu6E5vFu0-S9E7fo",
    authDomain: "enatega-multivendor-web.firebaseapp.com",
    projectId: "enatega-multivendor-web",
    storageBucket: "enatega-multivendor-web.appspot.com",
