@@ -16,6 +16,7 @@ import { LoginWrapper } from "../Wrapper";
 import useStyles from "./styles";
 
 function Login() {
+  
   const theme = useTheme();
   const [mainError, setMainError] = useState({});
   const classes = useStyles();
@@ -70,6 +71,9 @@ function Login() {
       <Typography variant="h5" className={classes.font700}>
         Welcome!
       </Typography>
+
+
+
       <Typography
         variant="caption"
         className={`${classes.caption} ${classes.fontSubHead} ${classes.font700} `}

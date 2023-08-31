@@ -15,7 +15,6 @@ function PricingView(props) {
   const { restaurantData } = props;
 
   const [deliveryCharges, setDeliveryCharges] = useState(0);
-  console.log(cart);
 
   useEffect(() => {
     (async () => {

@@ -36,6 +36,7 @@ import VerifyPhone from "./screens/VerifyPhone/VerifyPhone";
 import UserContext from "./context/User"
 
 function App() {
+  
   const { isLoggedIn } = useContext(UserContext);
   const [message, setMessage] = useState(null);
   const { isLoaded } = useJsApiLoader({

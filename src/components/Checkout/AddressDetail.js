@@ -27,7 +27,7 @@ function AddressDetail({ addressDetail, locationModal, toggleDetail, notificatio
     onError,
   });
 
-  console.log('AddressDetail Component',{addressDetail})
+  
 
   function onCompleted(data) {
     if (isEdit) {

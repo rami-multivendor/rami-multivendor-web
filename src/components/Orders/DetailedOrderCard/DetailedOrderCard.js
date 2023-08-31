@@ -53,7 +53,7 @@ function DetailedOrderCard(props) {
               <Typography
                 variant="body2"
                 color="textSecondary"
-                numberOfLines={1}
+                numberoflines={1}
                 className={classes.textBold}
               >
                   {(props.restaurant?.name ?? "...").slice(0, 8).replace(/\s/g, "") + (props.restaurant?.name?.length > 9 ? "..." : "")}
