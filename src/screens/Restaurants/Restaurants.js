@@ -185,7 +185,7 @@ function Restaurants() {
           {activeOrders.map((item) => (
               <Grid key={item.id} item sm={12} xl={6} lg={6}>
                 {mobile ? null : <DetailedOrderCard key={item._id} {...item} />}
-              </Grid>
+              </Grid> 
             ))}
         </Grid>
       </Box>) : null}

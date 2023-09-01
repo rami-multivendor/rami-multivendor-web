@@ -26,7 +26,7 @@ function RestaurantSection(props) {
       behavior: "smooth",
     });
   }, []);
- 
+
   return (
     <Grid container item className={classes.mainContainer}>
       <Grid item sm={1} />
