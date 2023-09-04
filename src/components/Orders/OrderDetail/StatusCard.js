@@ -100,7 +100,7 @@ export default function StatusCard(props) {
     };
   }
 
-  const { description, estimated_time, feedback, status_image } =
+  const { description, estimated_time,  status_image } =
     getOrderStatusValues(props);
 
   return (
