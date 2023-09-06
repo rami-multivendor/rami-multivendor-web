@@ -33,10 +33,9 @@ import * as Sentry from "@sentry/react";
 import AuthRoute from "./routes/AuthRoute";
 import PrivateRoute from "./routes/PrivateRoute";
 import VerifyPhone from "./screens/VerifyPhone/VerifyPhone";
-import UserContext from "./context/User"
+import UserContext from "./context/User";
 
 function App() {
-  
   const { isLoggedIn } = useContext(UserContext);
   const [message, setMessage] = useState(null);
   const { isLoaded } = useJsApiLoader({
@@ -52,7 +51,7 @@ function App() {
           .then(() => {
             getToken(messaging, {
               vapidKey:
-                "BJhEPGTFlkP_iIOlscRX036TS4reCJsIL9HS3na9UhHuUoxvU45MIdkqjzn_3k7sEwLXAv1TU8SQR1heJyVPq8M",
+                "BOpVOtmawD0hzOR0F5NQTz_7oTlNVwgKX_EgElDnFuILsaE_jWYPIExAMIIGS-nYmy1lhf2QWFHQnDEFWNG_Z5w",
             })
               .then((token) => {
                 localStorage.setItem("messaging-token", token);
@@ -211,9 +210,7 @@ function App() {
         />
         <Route
           path={"/checkout"}
-          element={
-            isLoggedIn ? <Checkout /> : <Login />
-          }
+          element={isLoggedIn ? <Checkout /> : <Login />}
         />
         <Route
           path={"/order-detail/:id"}
