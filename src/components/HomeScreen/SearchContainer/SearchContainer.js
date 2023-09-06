@@ -81,7 +81,7 @@ function SearchContainer({
   const handleClose = useCallback(() => {
     setOpen(false);
   }, []);
-  console.log("location", location);
+  
 
   useEffect(() => {
     loadMap();

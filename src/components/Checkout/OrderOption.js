@@ -309,7 +309,7 @@ function TimeComponent({
     if (timeType === "PM") {
       h = parseInt(h) + 12;
     }
-    console.log(h, m, date);
+    
     const d = new Date();
     d.setDate(date.getDate());
     d.setHours(h);

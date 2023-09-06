@@ -92,6 +92,7 @@ function Checkout() {
     removeQuantity,
   } = useContext(UserContext);
 
+
   const { location, setLocation } = useLocationContext();
   const { getCurrentLocation } = useLocation();
   const theme = useTheme();
@@ -346,9 +347,9 @@ function Checkout() {
         variation: food.variation._id,
         addons: food.addons
           ? food.addons.map(({ _id, options }) => ({
-              _id,
-              options: options.map(({ _id }) => _id),
-            }))
+            _id,
+            options: options.map(({ _id }) => _id),
+          }))
           : [],
         specialInstructions: food.specialInstructions,
       };
@@ -756,3 +757,5 @@ function Checkout() {
 }
 
 export default Checkout;
+
+

@@ -101,7 +101,7 @@ function OrderDetail() {
   }
 
   function onError(error) {
-    console.log(JSON.stringify(error));
+    
     FlashMessage({
       message: error.networkError.result.errors[0].message,
     });

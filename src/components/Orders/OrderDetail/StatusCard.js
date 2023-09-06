@@ -42,7 +42,7 @@ export default function StatusCard(props) {
     const calculateTime = Math.floor(
       (new Date(preparationTime) - Date.now()) / 1000 / 60
     );
-    console.log("prep", preparationTime, "calc", calculateTime);
+   
     let description = "";
     let estimated_time = "";
     let feedback = "";
@@ -100,9 +100,9 @@ export default function StatusCard(props) {
     };
   }
 
-  const { description, estimated_time, feedback, status_image } =
+  const { description, estimated_time,  status_image } =
     getOrderStatusValues(props);
-  console.log(feedback);
+
   return (
     <>
       <Box className={classes.topOrder} mb={!small && theme.spacing(2)}>

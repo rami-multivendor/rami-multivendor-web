@@ -6,6 +6,7 @@ import useStyles from "./styles";
 import { ReactComponent as EmptyIcon } from "../../../assets/images/empty-search.svg";
 
 function RestaurantGrid(props) {
+  
   const theme = useTheme();
   const extraSmall = useMediaQuery(theme.breakpoints.down("sm"));
   const classes = useStyles(extraSmall);
