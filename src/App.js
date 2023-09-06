@@ -51,7 +51,7 @@ function App() {
           .then(() => {
             getToken(messaging, {
               vapidKey:
-                "BOpVOtmawD0hzOR0F5NQTz_7oTlNVwgKX_EgElDnFuILsaE_jWYPIExAMIIGS-nYmy1lhf2QWFHQnDEFWNG_Z5w",
+                "BJhEPGTFlkP_iIOlscRX036TS4reCJsIL9HS3na9UhHuUoxvU45MIdkqjzn_3k7sEwLXAv1TU8SQR1heJyVPq8M",
             })
               .then((token) => {
                 localStorage.setItem("messaging-token", token);
