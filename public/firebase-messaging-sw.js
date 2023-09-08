@@ -6,13 +6,13 @@ importScripts(
   "https://www.gstatic.com/firebasejs/9.4.0/firebase-messaging-compat.js"
 );
 const app = firebase.initializeApp({
-  apiKey: "AIzaSyDGDa0gKH1aKvpOYtVNu6E5vFu0-S9E7fo",
-  authDomain: "enatega-multivendor-web.firebaseapp.com",
-  projectId: "enatega-multivendor-web",
-  storageBucket: "enatega-multivendor-web.appspot.com",
-  messagingSenderId: "390014290500",
-  appId: "1:390014290500:web:f451cecc859582326e0a11",
-  measurementId: "G-M313VQ0YYM",
+  apiKey: "AIzaSyDx_iSQ9LroTF7NMm20aRvw2wJqhwSnJ3U",
+  authDomain: "enatega-multivender-web.firebaseapp.com",
+  projectId: "enatega-multivender-web",
+  storageBucket: "enatega-multivender-web.appspot.com",
+  messagingSenderId: "438532750182",
+  appId: "1:438532750182:web:516b850eff4e0349f0a6a7",
+  measurementId: "G-KLBJSEHRYQ",
 });
 const messaging = firebase.messaging(app);
 
