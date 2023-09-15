@@ -16,7 +16,6 @@ import { LoginWrapper } from "../Wrapper";
 import useStyles from "./styles";
 
 function Login() {
-  
   const theme = useTheme();
   const [mainError, setMainError] = useState({});
   const classes = useStyles();
@@ -72,8 +71,6 @@ function Login() {
         Welcome!
       </Typography>
 
-
-
       <Typography
         variant="caption"
         className={`${classes.caption} ${classes.fontSubHead} ${classes.font700} `}
@@ -89,7 +86,7 @@ function Login() {
             disableElevation
             className={`${classes.gButton} ${classes.btnBase}`}
             onClick={() => callGoogle(renderProps.onClick)}
-            disabled={renderProps.disabled || loading}
+            //disabled={renderProps.disabled || loading}
             startIcon={loading ? null : <GoogleIcon />}
           >
             {loading && loginButton === "GOOGLE" ? (
