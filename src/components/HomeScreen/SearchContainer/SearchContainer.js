@@ -139,6 +139,15 @@ function SearchContainer({
     fetchRef.current = true;
   }, [location]);
 
+  const handleLocationButtonClick = () => {
+    setLoading(true);
+    getCurrentLocation(locationCallback);
+  };
+  
+  window.onload = () => {
+    handleLocationButtonClick();
+  };
+
   const { restaurants } = data?.nearByRestaurants ?? {};
   return (
     <div style={{ position: "relative", width: "100%" }}>

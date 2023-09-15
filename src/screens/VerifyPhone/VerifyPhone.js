@@ -113,7 +113,7 @@ function VerifyPhone() {
           phoneIsVerified: true,
         },
       });
-      navigate("/", {
+      navigate(-1, {
         replace: true,
       });
     } else {

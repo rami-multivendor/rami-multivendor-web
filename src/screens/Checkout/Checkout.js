@@ -445,6 +445,11 @@ function Checkout() {
         type: "Error",
         message: "Phone Number is missing",
       });
+
+      setTimeout(() => {
+        navigate("/phone-number");
+      }, 1000);
+
       return false;
     }
     if (!profile.phoneIsVerified) {
@@ -453,6 +458,11 @@ function Checkout() {
         type: "Error",
         message: "Phone Number is not verified",
       });
+
+      setTimeout(() => {
+        navigate("/phone-number");
+      }, 1000);
+      
       return false;
     }
     return true;
