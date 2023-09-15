@@ -462,7 +462,7 @@ function Checkout() {
       setTimeout(() => {
         navigate("/phone-number");
       }, 1000);
-      
+
       return false;
     }
     return true;
