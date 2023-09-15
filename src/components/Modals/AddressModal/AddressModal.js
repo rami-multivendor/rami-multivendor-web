@@ -20,6 +20,7 @@ import { useLocation } from "../../../hooks";
 import FlashMessage from "../../FlashMessage";
 import useStyle from "./styles";
 import MarkerImage from "../../../assets/images/marker.png";
+import ClearIcon from "@mui/icons-material/Clear";
 
 function AddressModal({ toggleModal, isVisible, regionDetail, changeAddress }) {
   const classes = useStyle();
@@ -42,6 +43,10 @@ function AddressModal({ toggleModal, isVisible, regionDetail, changeAddress }) {
   const toggleSnackbar = useCallback(() => {
     setMainError({});
   }, []);
+
+  const handleClearClick = () => {
+    setLocationName("");
+  };
 
   const changeCoordinates = async (coordinates, index) => {
     setLoading(true);
@@ -129,26 +134,33 @@ function AddressModal({ toggleModal, isVisible, regionDetail, changeAddress }) {
             variant="outlined"
             label="Enter your area"
             fullWidth
+            onChange={(e) => setLocationName(e.target.value)}
             value={locationName}
-            disabled
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
                   {loading ? (
                     <CircularProgress size={24} />
                   ) : (
-                    <IconButton
-                      onClick={(e) => {
-                        e.preventDefault();
-                        if (!loading) {
-                          setLoading(true);
-                          getCurrentLocation(locationCallback);
-                        }
-                      }}
-                      size="large"
-                    >
-                      <GpsFixedIcon color="primary" />
-                    </IconButton>
+                    <>
+                      {locationName && (
+                        <IconButton onClick={handleClearClick}>
+                          <ClearIcon color="primary" />
+                        </IconButton>
+                      )}
+                      <IconButton
+                        onClick={(e) => {
+                          e.preventDefault();
+                          if (!loading) {
+                            setLoading(true);
+                            getCurrentLocation(locationCallback);
+                          }
+                        }}
+                        size="large"
+                      >
+                        <GpsFixedIcon color="primary" />
+                      </IconButton>
+                    </>
                   )}
                 </InputAdornment>
               ),
