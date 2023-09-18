@@ -140,8 +140,11 @@ function CartItemsCard({
                   addQuantity(foodItem.key);
                 }}
                 removeQuantity={() => {
-                  removeQuantity(foodItem.key);
+                  if (foodItem.quantity > 1) {
+                    removeQuantity(foodItem.key);
+                  }
                 }}
+                
               />
               <Divider
                 orientation="horizontal"

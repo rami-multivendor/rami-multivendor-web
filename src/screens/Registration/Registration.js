@@ -89,21 +89,22 @@ function Registration() {
     const firstNameValue = formRef.current["firstName"].value;
     const lastNameValue = formRef.current["lastName"].value;
     const userPass = formRef.current["userPass"].value;
-    const passRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+    const passRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).+$/;
+  
     if (!isValidEmailAddress(emailValue)) {
       setEmailError("Invalid Email");
       validate = false;
     }
     if (!firstNameValue.trim()) {
-      setFNameError("Invalid Email");
+      setFNameError("Invalid First Name");
       validate = false;
     }
     if (!lastNameValue.trim()) {
-      setLNameError("Invalid Email");
+      setLNameError("Invalid Last Name");
       validate = false;
     }
     if (!userPass) {
-      setPassError("Invalid Email");
+      setPassError("Invalid Password");
       validate = false;
     }
     if (!phone) {
@@ -112,8 +113,9 @@ function Registration() {
     }
     if (!passRegex.test(userPass)) {
       setPassError(
-        "Invalid Password. Password must contain 1 capital letter, 1 small letter, 1 number"
+        "Invalid Password. Password must contain at least 1 capital letter, 1 small letter, and 1 number."
       );
+      validate = false;
     }
     if (validate) {
       setLoading(true);
@@ -122,6 +124,7 @@ function Registration() {
       setError("Something is missing");
     }
   };
+  
 
   const toggleSnackbar = useCallback(() => {
     setError("");
