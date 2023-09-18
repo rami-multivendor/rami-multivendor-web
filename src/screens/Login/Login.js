@@ -95,9 +95,7 @@ function Login() {
               )
             }
           >
-            {loading && loginButton === "GOOGLE" ? (
-              <CircularProgress color="secondary" />
-            ) : (
+            {loading && loginButton === "GOOGLE" ? null : (
               <Typography
                 variant="caption"
                 color="textPrimary"
