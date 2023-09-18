@@ -15,7 +15,7 @@ import { LoginWrapper } from "../Wrapper";
 import useStyles from "./styles";
 
 function isValidEmailAddress(address) {
-  return /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(address);
+  return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(address);
 }
 
 const EMAIL = gql`
@@ -128,7 +128,7 @@ function NewLogin() {
           type="email"
           disableElevation
           disabled={loading}
-          className={classes.btnBase}
+          className={`${classes.btnBase} ${classes.customBtn}`}
           onClick={(e) => {
             e.preventDefault();
             handleAction();
