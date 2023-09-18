@@ -86,8 +86,14 @@ function Login() {
             disableElevation
             className={`${classes.gButton} ${classes.btnBase}`}
             onClick={() => callGoogle(renderProps.onClick)}
-            //disabled={renderProps.disabled || loading}
-            startIcon={renderProps.disabled || loading ? null : <GoogleIcon />}
+            disabled={renderProps.disabled || loading}
+            startIcon={
+              renderProps.disabled || loading ? (
+                <CircularProgress color="secondary" size={24} />
+              ) : (
+                <GoogleIcon />
+              )
+            }
           >
             {loading && loginButton === "GOOGLE" ? (
               <CircularProgress color="secondary" />
