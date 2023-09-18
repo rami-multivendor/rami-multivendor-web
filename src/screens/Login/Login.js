@@ -87,7 +87,7 @@ function Login() {
             className={`${classes.gButton} ${classes.btnBase}`}
             onClick={() => callGoogle(renderProps.onClick)}
             //disabled={renderProps.disabled || loading}
-            startIcon={loading ? null : <GoogleIcon />}
+            startIcon={renderProps.disabled || loading ? null : <GoogleIcon />}
           >
             {loading && loginButton === "GOOGLE" ? (
               <CircularProgress color="secondary" />
