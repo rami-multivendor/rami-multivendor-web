@@ -21,6 +21,7 @@ import FlashMessage from "../../FlashMessage";
 import useStyle from "./styles";
 import MarkerImage from "../../../assets/images/marker.png";
 import ClearIcon from "@mui/icons-material/Clear";
+import PlacesAutocomplete from "react-places-autocomplete";
 
 function AddressModal({ toggleModal, isVisible, regionDetail, changeAddress }) {
   const classes = useStyle();
@@ -30,6 +31,10 @@ function AddressModal({ toggleModal, isVisible, regionDetail, changeAddress }) {
   const { getCurrentLocation } = useLocation();
   const { latLngToGeoString } = useLocation();
   const [loading, setLoading] = useState();
+  const handleLocationSelection = (selectedLocation) => {
+    setLocationName(selectedLocation);
+  };
+
   useEffect(() => {
     if (regionDetail) {
       setRegion({
@@ -130,42 +135,76 @@ function AddressModal({ toggleModal, isVisible, regionDetail, changeAddress }) {
           </Box>
         </DialogTitle>
         <DialogContent>
-          <TextField
-            variant="outlined"
-            label="Enter your area"
-            fullWidth
-            onChange={(e) => setLocationName(e.target.value)}
+          <PlacesAutocomplete
             value={locationName}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  {loading ? (
-                    <CircularProgress size={24} />
-                  ) : (
-                    <>
-                      {locationName && (
-                        <IconButton onClick={handleClearClick}>
-                          <ClearIcon color="primary" />
-                        </IconButton>
-                      )}
-                      <IconButton
-                        onClick={(e) => {
-                          e.preventDefault();
-                          if (!loading) {
-                            setLoading(true);
-                            getCurrentLocation(locationCallback);
-                          }
-                        }}
-                        size="large"
+            onChange={setLocationName}
+            onSelect={handleLocationSelection}
+          >
+            {({
+              getInputProps,
+              suggestions,
+              getSuggestionItemProps,
+              loading,
+            }) => (
+              <div>
+                <TextField
+                  variant="outlined"
+                  label="Enter your area"
+                  fullWidth
+                  {...getInputProps()}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        {loading ? (
+                          <CircularProgress size={24} />
+                        ) : (
+                          <>
+                            {locationName && (
+                              <IconButton onClick={handleClearClick}>
+                                <ClearIcon color="primary" />
+                              </IconButton>
+                            )}
+                            <IconButton
+                              onClick={(e) => {
+                                e.preventDefault();
+                                if (!loading) {
+                                  setLoading(true);
+                                  getCurrentLocation(locationCallback);
+                                }
+                              }}
+                              size="large"
+                            >
+                              <GpsFixedIcon color="primary" />
+                            </IconButton>
+                          </>
+                        )}
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+                <div>
+                  {loading ? <div>Loading...</div> : null}
+                  {suggestions.map((suggestion) => {
+                    const style = {
+                      backgroundColor: suggestion.active ? "#90EA93" : "#fff",
+                      color: "black",
+                      fontSize: "16px",
+                      padding: "10px 16px",
+                    };
+                    return (
+                      <div
+                        {...getSuggestionItemProps(suggestion, { style })}
+                        key={suggestion.placeId}
                       >
-                        <GpsFixedIcon color="primary" />
-                      </IconButton>
-                    </>
-                  )}
-                </InputAdornment>
-              ),
-            }}
-          />
+                        {suggestion.description}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </PlacesAutocomplete>
+
           <Box display="flex" className={classes.mapContainer}>
             <GoogleMap
               mapContainerStyle={{ height: "400px", width: "100%" }}

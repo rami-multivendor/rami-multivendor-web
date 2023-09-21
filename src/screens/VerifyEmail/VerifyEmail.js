@@ -83,7 +83,7 @@ function VerifyEmail() {
         name: createUser.name,
         email: createUser.email,
       });
-      navigate("/verify-phone", {
+      navigate("/", {
         replace: true,
       });
       setTokenAsync(createUser.token);
