@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     opacity: 1,
     "&:hover": {
       backgroundColor: theme.palette.common.black,
-      opacity: 0.7,
+      opacity: 0.8,
     },
     width: "70%",
     borderRadius: 10,
