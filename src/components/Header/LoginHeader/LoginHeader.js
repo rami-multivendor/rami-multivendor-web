@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation } from "react-router";
 import LoginDesktopHeader from "./DesktopHeader";
 
-const TITLE = "Rumi";
+const TITLE = "Rami";
 
 const REGISTRATION_PATH = [
   "/login",

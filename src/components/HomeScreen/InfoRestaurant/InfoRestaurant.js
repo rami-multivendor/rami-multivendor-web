@@ -26,7 +26,7 @@ function InfoRestaurant() {
           <Card className={classes.infoCard}>
             <CardContent>
               <Typography variant="h5" className={classes.infotTitle}>
-                List your restaurant on Rumi
+                List your restaurant on Rami
               </Typography>
               <Typography className={classes.infoDescription}>
                 Would you like thousands of new customers to taste your amazing food? So would we!

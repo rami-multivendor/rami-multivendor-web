@@ -44,13 +44,13 @@ function Footer() {
             }}
             align="center"
           >
-            Rumi
+            Rami
           </Typography>
           <Typography
             variant="body2"
             style={{ fontWeight: 500, color: "#fff", fontSize: 15 }}
           >
-            Rumi is an open-source delivery management platform for the
+            Rami is an open-source delivery management platform for the
             future. We prioritize innovation, flexibility, and affordability,
             and offer a scalable, customizable solution that streamlines your
             delivery processes.
@@ -110,7 +110,7 @@ function Footer() {
               display: small ? "none" : "block",
             }}
           >
-            Rumi – © 2022 All Rights Reserved
+            Rami – © 2022 All Rights Reserved
           </Typography>
         </Box>
       </Grid>
@@ -227,7 +227,7 @@ function Footer() {
             fontSize: 12,
           }}
         >
-          Rumi – © 2022 All Rights Reserved
+          Rami – © 2022 All Rights Reserved
         </Typography>
       </Grid>
     </Grid>

@@ -225,7 +225,7 @@ function Stripe() {
               >
                 <StripeCheckout
                   label={`Pay Now $${order?.orderAmount} `}
-                  name="Rumi"
+                  name="Rami"
                   description={`Your total is $${order?.orderAmount}`}
                   amount={order?.orderAmount * 100}
                   panelLabel="Pay Now"
