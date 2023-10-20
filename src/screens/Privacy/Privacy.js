@@ -36,7 +36,7 @@ function PrivacyPolicy() {
               variant="subtitle2"
               className={classes.MV3}
             >
-              This policy explains how we, enatega, a brand of
+              This policy explains how we, rumi, a brand of
               <a
                 href="https://enatega.com"
                 target="_blank"

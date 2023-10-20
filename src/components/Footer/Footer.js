@@ -39,18 +39,18 @@ function Footer() {
             variant="h4"
             style={{
               fontWeight: 900,
-              color: "#6FCF97",
+              color: "#a594e0",
               marginBottom: 20,
             }}
             align="center"
           >
-            Enatega
+            Rumi
           </Typography>
           <Typography
             variant="body2"
             style={{ fontWeight: 500, color: "#fff", fontSize: 15 }}
           >
-            Enatega is an open-source delivery management platform for the
+            Rumi is an open-source delivery management platform for the
             future. We prioritize innovation, flexibility, and affordability,
             and offer a scalable, customizable solution that streamlines your
             delivery processes.
@@ -110,7 +110,7 @@ function Footer() {
               display: small ? "none" : "block",
             }}
           >
-            Enatega – © 2022 All Rights Reserved
+            Rumi – © 2022 All Rights Reserved
           </Typography>
         </Box>
       </Grid>
@@ -140,14 +140,14 @@ function Footer() {
             className={classes.iconContainer}
             onClick={() => redirectHandler("https://www.facebook.com/enatega/")}
           >
-            <FacebookIcon style={{ color: "#90EA93" }} />
+            <FacebookIcon style={{ color: "#D0BFFF" }} />
           </Box>
           <Box
             className={classes.iconContainer}
             style={{ marginLeft: 10 }}
             onClick={() => redirectHandler("https://twitter.com/NinjasCode1")}
           >
-            <TwitterIcon style={{ color: "#90EA93" }} />
+            <TwitterIcon style={{ color: "#D0BFFF" }} />
           </Box>
           <Box
             className={classes.iconContainer}
@@ -156,7 +156,7 @@ function Footer() {
               redirectHandler("https://www.instagram.com/enatega.nb/")
             }
           >
-            <InstagramIcon style={{ color: "#90EA93" }} />
+            <InstagramIcon style={{ color: "#D0BFFF" }} />
           </Box>
           <Box
             className={classes.iconContainer}
@@ -165,7 +165,7 @@ function Footer() {
               redirectHandler("https://www.linkedin.com/company/14583783")
             }
           >
-            <LinkedInIcon style={{ color: "#90EA93" }} />
+            <LinkedInIcon style={{ color: "#D0BFFF" }} />
           </Box>
           <Box
             className={classes.iconContainer}
@@ -176,7 +176,7 @@ function Footer() {
               )
             }
           >
-            <GitHubIcon style={{ color: "#90EA93" }} />
+            <GitHubIcon style={{ color: "#D0BFFF" }} />
           </Box>
         </Box>
         <Typography
@@ -227,7 +227,7 @@ function Footer() {
             fontSize: 12,
           }}
         >
-          Enatega – © 2022 All Rights Reserved
+          Rumi – © 2022 All Rights Reserved
         </Typography>
       </Grid>
     </Grid>

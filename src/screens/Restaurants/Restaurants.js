@@ -177,19 +177,19 @@ function Restaurants() {
       </Box>
       {activeOrders.length > 0 ? (<Box
         style={{
-          backgroundColor: "#8EE590",
+          backgroundColor: "#a594e0",
           padding: mobile ? "10px" : "80px 90px",
           width: "100%",
         }}
       ><Grid container spacing={2}>
           {activeOrders.map((item) => (
-              <Grid key={item.id} item sm={12} xl={6} lg={6}>
-                {mobile ? null : <DetailedOrderCard key={item._id} {...item} />}
-              </Grid> 
-            ))}
+            <Grid key={item.id} item sm={12} xl={6} lg={6}>
+              {mobile ? null : <DetailedOrderCard key={item._id} {...item} />}
+            </Grid>
+          ))}
         </Grid>
       </Box>) : null}
-      {restaurantSections.length<1 ? null : (
+      {restaurantSections.length < 1 ? null : (
         <Box className={classes.topRestContainer}>
           <Box className={classes.topRestWrapper}>
             <Grid container item>
@@ -203,7 +203,7 @@ function Restaurants() {
         </Box>
       )}
 
-    <Box style={{ width: "100%", minHeight: "100vh" }}>
+      <Box style={{ width: "100%", minHeight: "100vh" }}>
         <RestaurantGrid
           checkCart={checkCart}
           restaurants={search ? searchRestaurants(search) : restaurants}

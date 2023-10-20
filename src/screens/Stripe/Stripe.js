@@ -184,7 +184,7 @@ function Stripe() {
         open={Boolean(mainError.type)}
         severity={mainError.type}
         alertMessage={mainError.message}
-        //handleClose={toggleSnackbar}
+      //handleClose={toggleSnackbar}
       />
       <Header />
       <Grid
@@ -225,7 +225,7 @@ function Stripe() {
               >
                 <StripeCheckout
                   label={`Pay Now $${order?.orderAmount} `}
-                  name="Enatega"
+                  name="Rumi"
                   description={`Your total is $${order?.orderAmount}`}
                   amount={order?.orderAmount * 100}
                   panelLabel="Pay Now"

@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
   },
   contactContainer: {
-    background: "linear-gradient(180deg, #2d6734 0%, #90EA93 100%)",
+    background: "linear-gradient(180deg, #2d6734 0%, #D0BFFF 100%)",
     borderRadius: "0px",
     width: "100%",
     [theme.breakpoints.down("md")]: {

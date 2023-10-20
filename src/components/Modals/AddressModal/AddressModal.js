@@ -186,7 +186,7 @@ function AddressModal({ toggleModal, isVisible, regionDetail, changeAddress }) {
                   {loading ? <div>Loading...</div> : null}
                   {suggestions.map((suggestion) => {
                     const style = {
-                      backgroundColor: suggestion.active ? "#90EA93" : "#fff",
+                      backgroundColor: suggestion.active ? "#D0BFFF" : "#fff",
                       color: "black",
                       fontSize: "16px",
                       padding: "10px 16px",

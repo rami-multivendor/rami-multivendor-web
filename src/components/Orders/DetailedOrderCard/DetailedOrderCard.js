@@ -56,7 +56,7 @@ function DetailedOrderCard(props) {
                 numberoflines={1}
                 className={classes.textBold}
               >
-                  {(props.restaurant?.name ?? "...").slice(0, 8).replace(/\s/g, "") + (props.restaurant?.name?.length > 9 ? "..." : "")}
+                {(props.restaurant?.name ?? "...").slice(0, 8).replace(/\s/g, "") + (props.restaurant?.name?.length > 9 ? "..." : "")}
               </Typography>
               <Box
                 display="flex"
@@ -68,7 +68,7 @@ function DetailedOrderCard(props) {
               >
                 <Box display="flex" marginBottom={{ xs: "10px", sm: 0 }}>
                   <Status
-                    firstCol="#90EA93"
+                    firstCol="#D0BFFF"
                     secondCol="#C4C4C4"
                     isEta={false}
                     first={true}
@@ -103,7 +103,7 @@ function DetailedOrderCard(props) {
                 //className={classes.status}
                 className={`${classes.textBold} ${classes.smallText}`}
                 style={{
-                  backgroundColor: "#90EA93",
+                  backgroundColor: "#D0BFFF",
                   borderRadius: "8px",
                   padding: "6px 15px 6px 15px",
                   marginLeft: "10px",
@@ -121,19 +121,19 @@ function DetailedOrderCard(props) {
             </Box>
 
             <Box display={{ xs: "block", sm: "block" }}>
-            <Box
-              display="flex"
-              justifyContent="space-between"
-              pt={theme.spacing(1)}
-              style={{color: "black", fontWeight: 700, fontSize: 17}}
-            >
-              <Box display="flex">
-              {props?.items.length} item(s) |{" "}
-            {`${configuration.currencySymbol} ${parseFloat(
-              props.orderAmount
-            ).toFixed(2)}`}
+              <Box
+                display="flex"
+                justifyContent="space-between"
+                pt={theme.spacing(1)}
+                style={{ color: "black", fontWeight: 700, fontSize: 17 }}
+              >
+                <Box display="flex">
+                  {props?.items.length} item(s) |{" "}
+                  {`${configuration.currencySymbol} ${parseFloat(
+                    props.orderAmount
+                  ).toFixed(2)}`}
+                </Box>
               </Box>
-            </Box>
 
               <Typography
                 gutterBottom
@@ -145,16 +145,16 @@ function DetailedOrderCard(props) {
                   ? "Your order is still pending."
                   : props.orderStatus === "ASSIGNED" ||
                     props.orderStatus === "ACCEPTED"
-                  ? "We are asking the restaurant how long it will take to deliver your food".slice(
+                    ? "We are asking the restaurant how long it will take to deliver your food".slice(
                       0,
                       40
                     ) + "..."
-                  : props.orderStatus === "PICKED"
-                  ? "We are asking the rider how long it will take to deliver your food".slice(
-                      0,
-                      40
-                    ) + "..."
-                  : null}
+                    : props.orderStatus === "PICKED"
+                      ? "We are asking the rider how long it will take to deliver your food".slice(
+                        0,
+                        40
+                      ) + "..."
+                      : null}
               </Typography>
             </Box>
           </Box>

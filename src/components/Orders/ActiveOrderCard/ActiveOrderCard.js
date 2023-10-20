@@ -5,7 +5,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import ConfigurationContext from "../../../context/Configuration";
 import { Status } from "../Status/Status";
@@ -47,28 +47,28 @@ function ActiveOrderCard(props) {
               </Typography>
               <Box display="flex">
                 <Status
-                firstCol="#3C8F7C"
+                  firstCol="#a594e0"
                   isEta={false}
                   first={true}
                   last={false}
                   isActive={true}
                 />
                 <Status
-                firstCol="#3C8F7C"
+                  firstCol="#a594e0"
                   isEta={STATUS_ORDER.indexOf(props.orderStatus) < 1}
                   first={false}
                   last={false}
                   isActive={true}
                 />
                 <Status
-                firstCol="#3C8F7C"
+                  firstCol="#a594e0"
                   isEta={STATUS_ORDER.indexOf(props.orderStatus) < 2}
                   first={false}
                   last={false}
                   isActive={true}
                 />
                 <Status
-                firstCol="#3C8F7C"
+                  firstCol="#a594e0"
                   isEta={STATUS_ORDER.indexOf(props.orderStatus) < 4}
                   first={false}
                   last={true}
@@ -81,13 +81,13 @@ function ActiveOrderCard(props) {
               display="flex"
               justifyContent="space-between"
               pt={theme.spacing(1)}
-              style={{color: "black", fontWeight: 700, fontSize: 17}}
+              style={{ color: "black", fontWeight: 700, fontSize: 17 }}
             >
               <Box display="flex">
-              {props?.items.length} item(s) |{" "}
-            {`${configuration.currencySymbol} ${parseFloat(
-              props.orderAmount
-            ).toFixed(2)}`}
+                {props?.items.length} item(s) |{" "}
+                {`${configuration.currencySymbol} ${parseFloat(
+                  props.orderAmount
+                ).toFixed(2)}`}
               </Box>
             </Box>
             <Typography
@@ -104,10 +104,10 @@ function ActiveOrderCard(props) {
                 ? "We are asking the restaurant to accept your order"
                 : props.orderStatus === "ASSIGNED" ||
                   props.orderStatus === "ACCEPTED"
-                ? "We are asking the restaurant how long it will take to deliver your food"
-                : props.orderStatus === "PICKED"
-                ? "We are asking the rider how long it will take to deliver your food"
-                : null}
+                  ? "We are asking the restaurant how long it will take to deliver your food"
+                  : props.orderStatus === "PICKED"
+                    ? "We are asking the rider how long it will take to deliver your food"
+                    : null}
             </Typography>
             {/* <Typography
               gutterBottom

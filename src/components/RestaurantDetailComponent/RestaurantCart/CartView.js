@@ -47,9 +47,8 @@ function CartView(props) {
             (variation) => variation._id === cartItem.variation._id
           );
           if (!variationItem) return null;
-          const foodItemTitle = `${foodItem.title}${
-            variationItem.title ? `(${variationItem.title})` : ""
-          }`;
+          const foodItemTitle = `${foodItem.title}${variationItem.title ? `(${variationItem.title})` : ""
+            }`;
           let foodItemPrice = variationItem.price;
           let optionTitles = [];
           if (cartItem.addons) {
@@ -115,7 +114,7 @@ function CartView(props) {
       <Box
         style={{
           background:
-            "linear-gradient(260.99deg, #90EA93 2.79%, #6FCF97 96.54%)",
+            "linear-gradient(260.99deg, #D0BFFF 2.79%, #a594e0 96.54%)",
           borderRadius: "20px",
           padding: "30px 20px",
         }}

@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 99,
   },
   headerBar: {
-    background: "linear-gradient(260.99deg, #90EA93 2.79%, #6FCF97 96.54%)",
+    background: "linear-gradient(260.99deg, #D0BFFF 2.79%, #a594e0 96.54%)",
     borderRadius: "20px",
     padding: "30px 20px",
   },

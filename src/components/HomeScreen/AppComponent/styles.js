@@ -17,21 +17,22 @@ const useStyle = makeStyles((theme) => ({
     marginRight: "2%",
   },
   btn: {
-    backgroundColor: "#3C8F7C",
+    backgroundColor: "#a594e0",
     color: theme.palette.common.white,
     "&:hover": {
-      backgroundColor: "#3C8F7C",
+      backgroundColor: "#a594e0",
     },
   },
   img2: {
     height: "auto",
     maxWidth: "100%",
-    marginTop: "3rem",
+    marginTop: "10rem", // Adjusted margin
     width: 220,
   },
   img1: {
     maxWidth: "100%",
     height: "auto",
+    marginTop: "2rem", // Adjusted margin
     width: 220,
   },
   bgText: {
@@ -40,7 +41,6 @@ const useStyle = makeStyles((theme) => ({
     left: -30,
     fontSize: 150,
     fontWeight: 500,
-
     color: theme.palette.common.black,
     mixBlendMode: "normal",
     opacity: 0.24,
@@ -52,7 +52,6 @@ const useStyle = makeStyles((theme) => ({
     left: -20,
     fontSize: 100,
     fontWeight: 500,
-
     color: theme.palette.common.black,
     mixBlendMode: "normal",
     opacity: 0.24,

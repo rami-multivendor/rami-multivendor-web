@@ -36,7 +36,7 @@ export default function Blogs() {
         <Button
           style={{
             backgroundColor: "white",
-            color: "#3C8F7C",
+            color: "#a594e0",
             width: 160,
             margin: mobile ? "1rem 0 1rem 0" : 0,
             fontWeight: 700,
@@ -66,7 +66,7 @@ function BlogComponent({ title, desc }) {
           style={{
             width: small ? "90%" : "80%",
             backgroundColor: "#FFF",
-            background: "linear-gradient(to right, #90EA93 0%, #FFFFFF 20%)",
+            background: "linear-gradient(to right, #D0BFFF 0%, #FFFFFF 20%)",
             minHeight: small ? 400 : 200,
             borderRadius: 40,
             display: "flex",

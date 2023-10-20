@@ -4,7 +4,7 @@ import UserContext from "../../context/User";
 import DHeader from "./desktop.header";
 import Analytics from "../../utils/analytics";
 
-const TITLE = "Enatega";
+const TITLE = "Rumi";
 const NAME = "...";
 const NAVITEMS = [
   {

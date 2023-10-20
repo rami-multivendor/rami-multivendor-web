@@ -39,10 +39,10 @@ function PricingDelivery({
   const theme = useTheme();
   const containerStyle = !grid
     ? {
-        display: "flex",
-        alignItems: "center",
-        justifyContent: isSmall ? "center" : "flex-start",
-      }
+      display: "flex",
+      alignItems: "center",
+      justifyContent: isSmall ? "center" : "flex-start",
+    }
     : { display: "block" };
   return (
     <Box style={containerStyle}>
@@ -253,7 +253,7 @@ function Card(props) {
                 justifyContent: props.isSmall ? "center" : "flex-end",
               }}
             >
-              <StarSharpIcon style={{ fontSize: "16px", color: "#448B7B" }} />
+              <StarSharpIcon style={{ fontSize: "16px", color: "#a594e0" }} />
               <Typography
                 variant="caption"
                 color="textSecondary"

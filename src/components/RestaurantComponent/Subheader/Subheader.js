@@ -249,7 +249,7 @@ function Subheader() {
                                 margin={1}
                               />
                             ) : (
-                              <LocationIcon style={{ fill: "#3C8F7C" }} />
+                              <LocationIcon style={{ fill: "#a594e0" }} />
                             )}
                           </InputAdornment>
                         </>

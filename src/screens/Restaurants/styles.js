@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "-26px",
   },
   topRestContainer: {
-    backgroundColor: "#8EE590",
+    backgroundColor: "#a594e0",
     borderRadius: "0px",
     width: "100%",
     paddingBottom: 10,

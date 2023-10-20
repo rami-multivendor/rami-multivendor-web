@@ -112,7 +112,7 @@ const useStyle = makeStyles((theme) => ({
         "& .MuiButton-label": {
           color: theme.palette.primary.main,
         },
-        borderColor: theme.palette.primary.main, 
+        borderColor: theme.palette.primary.main,
       },
     },
     "& .MuiButton-root.MuiButton-contained": {
@@ -127,7 +127,7 @@ const useStyle = makeStyles((theme) => ({
       },
     },
   },
-  
+
   inputprops: {
     ...theme.typography.subtitle1,
     backgroundColor: theme.palette.grey[200],
@@ -238,7 +238,7 @@ const useStyle = makeStyles((theme) => ({
     borderBottom: `1px solid ${theme.palette.grey[500]}`,
   },
   darkGreen: {
-    color: "#3C8F7C",
+    color: "#a594e0",
   },
   closeContainer: {
     position: "absolute",
