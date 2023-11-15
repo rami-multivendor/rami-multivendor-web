@@ -253,7 +253,7 @@ function Card(props) {
                 justifyContent: props.isSmall ? "center" : "flex-end",
               }}
             >
-              <StarSharpIcon style={{ fontSize: "16px", color: "#a594e0" }} />
+              <StarSharpIcon style={{ fontSize: "16px", color: "#61d921" }} />
               <Typography
                 variant="caption"
                 color="textSecondary"

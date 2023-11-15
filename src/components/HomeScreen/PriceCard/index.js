@@ -83,7 +83,7 @@ export default function PriceCard({ price, offer, desc, center }) {
             <Box mt={5} mb={2}>
               <Button
                 style={{
-                  backgroundColor: center ? "#a594e0" : "#fff",
+                  backgroundColor: center ? "#61d921" : "#fff",
                   color: center ? "#fff" : "#000",
                   width: 140,
                   fontWeight: 700,

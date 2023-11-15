@@ -1,5 +1,5 @@
 {
-  "name": "rami",
+  "name": "yalla",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -51,7 +51,7 @@
   },
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "start": "react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

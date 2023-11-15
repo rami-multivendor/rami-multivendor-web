@@ -238,7 +238,7 @@ const useStyle = makeStyles((theme) => ({
     borderBottom: `1px solid ${theme.palette.grey[500]}`,
   },
   darkGreen: {
-    color: "#a594e0",
+    color: "#61d921",
   },
   closeContainer: {
     position: "absolute",

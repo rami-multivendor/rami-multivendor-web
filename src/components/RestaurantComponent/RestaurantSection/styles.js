@@ -30,7 +30,7 @@ const useStyle = makeStyles((theme) => ({
   },
   divider: {
     width: "165px",
-    backgroundColor: "#a594e0",
+    backgroundColor: "#61d921",
     height: 10,
   },
 }));

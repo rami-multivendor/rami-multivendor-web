@@ -92,7 +92,7 @@ export default function CaseStudy() {
           <Button
             style={{
               backgroundColor: "white",
-              color: "#a594e0",
+              color: "#61d921",
               width: mobile ? 140 : 160,
               fontSize: mobile ? 10 : 12,
               fontWeight: 600,

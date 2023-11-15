@@ -177,7 +177,7 @@ function Restaurants() {
       </Box>
       {activeOrders.length > 0 ? (<Box
         style={{
-          backgroundColor: "#a594e0",
+          backgroundColor: "#61d921",
           padding: mobile ? "10px" : "80px 90px",
           width: "100%",
         }}

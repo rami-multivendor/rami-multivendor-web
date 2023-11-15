@@ -47,28 +47,28 @@ function ActiveOrderCard(props) {
               </Typography>
               <Box display="flex">
                 <Status
-                  firstCol="#a594e0"
+                  firstCol="#61d921"
                   isEta={false}
                   first={true}
                   last={false}
                   isActive={true}
                 />
                 <Status
-                  firstCol="#a594e0"
+                  firstCol="#61d921"
                   isEta={STATUS_ORDER.indexOf(props.orderStatus) < 1}
                   first={false}
                   last={false}
                   isActive={true}
                 />
                 <Status
-                  firstCol="#a594e0"
+                  firstCol="#61d921"
                   isEta={STATUS_ORDER.indexOf(props.orderStatus) < 2}
                   first={false}
                   last={false}
                   isActive={true}
                 />
                 <Status
-                  firstCol="#a594e0"
+                  firstCol="#61d921"
                   isEta={STATUS_ORDER.indexOf(props.orderStatus) < 4}
                   first={false}
                   last={true}

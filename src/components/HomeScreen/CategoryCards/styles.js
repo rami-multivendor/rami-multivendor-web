@@ -24,7 +24,7 @@ const useStyle = makeStyles((theme) => ({
   },
   bottom: {
     height: "55%",
-    backgroundColor: "#a594e0",
+    backgroundColor: "#61d921",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",

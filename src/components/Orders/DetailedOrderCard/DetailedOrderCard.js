@@ -68,7 +68,7 @@ function DetailedOrderCard(props) {
               >
                 <Box display="flex" marginBottom={{ xs: "10px", sm: 0 }}>
                   <Status
-                    firstCol="#D0BFFF"
+                    firstCol="#94e469"
                     secondCol="#C4C4C4"
                     isEta={false}
                     first={true}
@@ -103,7 +103,7 @@ function DetailedOrderCard(props) {
                 //className={classes.status}
                 className={`${classes.textBold} ${classes.smallText}`}
                 style={{
-                  backgroundColor: "#D0BFFF",
+                  backgroundColor: "#94e469",
                   borderRadius: "8px",
                   padding: "6px 15px 6px 15px",
                   marginLeft: "10px",

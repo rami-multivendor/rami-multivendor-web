@@ -114,7 +114,7 @@ function CartView(props) {
       <Box
         style={{
           background:
-            "linear-gradient(260.99deg, #D0BFFF 2.79%, #a594e0 96.54%)",
+            "linear-gradient(260.99deg, #94e469 2.79%, #61d921 96.54%)",
           borderRadius: "20px",
           padding: "30px 20px",
         }}

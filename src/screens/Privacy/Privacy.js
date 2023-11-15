@@ -36,7 +36,7 @@ function PrivacyPolicy() {
               variant="subtitle2"
               className={classes.MV3}
             >
-              This policy explains how we, rami, a brand of
+              This policy explains how we, yalla, a brand of
               <a
                 href="https://enatega.com"
                 target="_blank"
