@@ -6,10 +6,11 @@ import Typography from "@mui/material/Typography";
 import React from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import useStyle from "./styles";
-import { ReactComponent as Logo } from "../../../assets/images/logo.svg";
+// import { ReactComponent as Logo } from "../../../assets/images/logo.svg";
 import { useTheme } from "@emotion/react";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import PersonIcon from "@mui/icons-material/Person";
+import Logo from '../../../assets/images/logo.png'
 
 function LoginDesktopHeader({ title, showIcon, showCart = false }) {
   const classes = useStyle();
@@ -22,7 +23,8 @@ function LoginDesktopHeader({ title, showIcon, showCart = false }) {
           to={location.pathname === "/checkout" ? "/restaurant-list" : "/"}
           className={classes.linkDecoration}
         >
-          <Logo height={50} width={50} />
+          {/* <LogoSvg height={50} width={50} /> */}
+          <img height={50} width={100} src={Logo} alt="Yalla"/>
 
           <Typography
             variant="h6"
