@@ -124,9 +124,9 @@ export default function Contact() {
                 <Box className={classes.iconContainer}>
                   <WhatsAppIcon style={{ color: theme.palette.primary.main }} />
                 </Box>
-                <Typography style={{ color: "#FFF" }}>
+                {/* <Typography style={{ color: "#FFF" }}>
                   (+92) 3339461270
-                </Typography>
+                </Typography> */}
               </Box>
               <Box className={[classes.margin, classes.contactIcon]}>
                 <Box className={classes.iconContainer}>
@@ -143,7 +143,7 @@ export default function Contact() {
                   />
                 </Box>
                 <Typography style={{ color: "#FFF" }}>
-                  Islamabad, Pakistan
+                  Yarka, Israel
                 </Typography>
               </Box>
             </Box>
