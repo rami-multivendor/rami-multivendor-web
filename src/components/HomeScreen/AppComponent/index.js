@@ -65,9 +65,9 @@ export default function AppComponent() {
           display="flex"
           alignItems="center"
           justifyContent={"center"}
-          style={{ backgroundColor: "transparent", marginTop: small ? "0px" : "25px", marginBottom: medium ? "25px" : "0px"}}
+          style={{ backgroundColor: "transparent", marginTop: small ? "0px" : "25px", marginBottom: medium ? "25px" : "0px" }}
 
-          //mt={5}
+        //mt={5}
         >
           <Button
             className={classes.btn}
@@ -80,7 +80,7 @@ export default function AppComponent() {
             disableElevation
             onClick={() =>
               window.open(
-                "https://apps.apple.com/pk/app/enatega-multivendor/id1526488093",
+                "https://apps.apple.com/ca/app/yalla-customer/id6470450667",
                 "_blank"
               )
             }
@@ -99,7 +99,7 @@ export default function AppComponent() {
             startIcon={<img src={AppStore} alt="appstore" />}
             onClick={() =>
               window.open(
-                "https://play.google.com/store/apps/details?id=com.enatega.multivendor",
+                "https://play.google.com/store/apps/details?id=com.rami.multivendor",
                 "_blank"
               )
             }

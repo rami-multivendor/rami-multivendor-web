@@ -9,7 +9,6 @@ import {
 import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -138,14 +137,14 @@ function Footer() {
         >
           <Box
             className={classes.iconContainer}
-            onClick={() => redirectHandler("https://www.facebook.com/enatega/")}
+            onClick={() => redirectHandler("https://www.facebook.com/profile.php?id=61553673387883")}
           >
             <FacebookIcon style={{ color: "#94e469" }} />
           </Box>
           <Box
             className={classes.iconContainer}
             style={{ marginLeft: 10 }}
-            onClick={() => redirectHandler("https://twitter.com/NinjasCode1")}
+            onClick={() => redirectHandler("https://twitter.com/Yalla_delivery")}
           >
             <TwitterIcon style={{ color: "#94e469" }} />
           </Box>
@@ -153,7 +152,7 @@ function Footer() {
             className={classes.iconContainer}
             style={{ marginLeft: 10 }}
             onClick={() =>
-              redirectHandler("https://www.instagram.com/enatega.nb/")
+              redirectHandler("https://www.instagram.com/yalladelivery11/?next=%2F")
             }
           >
             <InstagramIcon style={{ color: "#94e469" }} />
@@ -162,21 +161,10 @@ function Footer() {
             className={classes.iconContainer}
             style={{ marginLeft: 10 }}
             onClick={() =>
-              redirectHandler("https://www.linkedin.com/company/14583783")
+              redirectHandler("www.linkedin.com/in/yalla-delivery-83b5a029b")
             }
           >
             <LinkedInIcon style={{ color: "#94e469" }} />
-          </Box>
-          <Box
-            className={classes.iconContainer}
-            style={{ marginLeft: 10 }}
-            onClick={() =>
-              redirectHandler(
-                "https://github.com/Ninjas-Code-official/Marketplace-Food-Delivery-Solution"
-              )
-            }
-          >
-            <GitHubIcon style={{ color: "#94e469" }} />
           </Box>
         </Box>
         <Typography

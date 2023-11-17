@@ -7,14 +7,14 @@ import React from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import useStyle from "./styles";
 // import { ReactComponent as Logo } from "../../../assets/images/logo.svg";
-import { useTheme } from "@emotion/react";
+// import { useTheme } from "@emotion/react";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import PersonIcon from "@mui/icons-material/Person";
 import Logo from '../../../assets/images/logo.png'
 
 function LoginDesktopHeader({ title, showIcon, showCart = false }) {
   const classes = useStyle();
-  const theme = useTheme();
+  // const theme = useTheme();
   const location = useLocation();
   return (
     <AppBar elevation={0} position="fixed">
@@ -26,14 +26,14 @@ function LoginDesktopHeader({ title, showIcon, showCart = false }) {
           {/* <LogoSvg height={50} width={50} /> */}
           <img height={50} width={100} src={Logo} alt="Yalla"/>
 
-          <Typography
+          {/* <Typography
             variant="h6"
             color={theme.palette.common.black}
             className={classes.font700}
             style={{ marginLeft: "8px" }}
           >
             {title}
-          </Typography>
+          </Typography> */}
         </RouterLink>
         <Box className={classes.flex}>
           {showIcon && (

@@ -91,7 +91,7 @@ export default function PriceCard({ price, offer, desc, center }) {
                 variant="contained"
                 disableElevation
                 onClick={() =>
-                  window.open("https://enatega.com/#contact", "_blank")
+                  window.open("https://yalla-multivendor-web.netlify.app/", "_blank")
                 }
               >
                 Get Quote

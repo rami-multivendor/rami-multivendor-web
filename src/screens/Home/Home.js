@@ -134,10 +134,10 @@ function Home() {
                         "• Zones functionality for Restaurants and Riders",
                       ]}
                       android={
-                        "https://play.google.com/store/apps/details?id=com.enatega.multirider"
+                        "https://play.google.com/store/apps/details?id=com.rami.multirider"
                       }
                       ios={
-                        "https://apps.apple.com/pk/app/enatega-mulitvendor-rider/id1526674511"
+                        "https://apps.apple.com/ca/app/rami-rider/id6470451144"
                       }
                       isMobile={true}
                     />
@@ -157,10 +157,10 @@ function Home() {
                         "• Real-time order receiving updates",
                       ]}
                       android={
-                        "https://play.google.com/store/apps/details?id=multivendor.enatega.restaurant"
+                        "https://play.google.com/store/apps/details?id=multivendor.rami.restaurant"
                       }
                       ios={
-                        "https://apps.apple.com/pk/app/enatega-multivendor-restaurant/id1526672537"
+                        "https://apps.apple.com/ca/app/yalla-store/id6470450987"
                       }
                       isMobile={true}
                     />
@@ -181,10 +181,10 @@ function Home() {
                         "• Previous order history and adding favorite restaurants",
                       ]}
                       android={
-                        "https://play.google.com/store/apps/details?id=com.enatega.multivendor"
+                        "https://play.google.com/store/apps/details?id=com.rami.multivendor"
                       }
                       ios={
-                        "https://apps.apple.com/pk/app/enatega-multivendor/id1526488093"
+                        "https://apps.apple.com/ca/app/yalla-customer/id6470450667"
                       }
                       isMobile={true}
                     />
@@ -201,7 +201,7 @@ function Home() {
                       "• Zones functionality for Restaurants and Riders",
                     ]}
                     web={true}
-                    link={"https://multivendor-admin.ninjascode.com/"}
+                    link={"https://yalla-multivendor-admin.netlify.app"}
                     isMobile={false}
                   />
                 </Grid>
@@ -216,7 +216,7 @@ function Home() {
                         "• Built on community-driven principles.",
                       ]}
                       web={true}
-                      link={"https://enatega.com/"}
+                      link={"https://yalla-multivendor-web.netlify.app/"}
                       isMobile={false}
                     />
                   </Box>
