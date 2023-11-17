@@ -167,7 +167,7 @@ function Footer() {
             <LinkedInIcon style={{ color: "#94e469" }} />
           </Box>
         </Box>
-        <Typography
+        {/* <Typography
           variant="body2"
           style={{ fontWeight: 700, display: "inline" }}
         >
@@ -197,7 +197,7 @@ function Footer() {
           >
             ninjascode
           </Typography>
-        </Box>
+        </Box> */}
 
         <Divider
           style={{

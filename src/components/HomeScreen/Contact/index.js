@@ -133,7 +133,7 @@ export default function Contact() {
                   <EmailIcon style={{ color: theme.palette.primary.main }} />
                 </Box>
                 <Typography style={{ color: "#FFF" }}>
-                  sharan@ninjascode.com
+                  ramiabureeshyalla@gmail.com
                 </Typography>
               </Box>
               <Box className={classes.contactIcon}>
